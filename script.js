@@ -225,9 +225,12 @@ async function updateEntityAndAssets() {
 
 // Copy entity.json to clipboard
 async function copyEntityJson() {
+      // Copy to clipboard
+  const updatedJson = /* Update logic here */ JSON.stringify(updatedEntityJson, null, 2);
+
   // Copy to clipboard
   navigator.clipboard
-    .writeText(updatedEntityJson)
+    .writeText(updatedJson)
     .then(() => alert("entity.json copied to clipboard!"))
     .catch((err) => console.error("Error copying to clipboard:", err));
 }
@@ -235,8 +238,10 @@ async function copyEntityJson() {
 // Copy asset.json to clipboard
 async function copyAssetJson() {
   // Copy to clipboard
+  const updatedJson = /* Update logic here */ JSON.stringify(updatedAssetJson, null, 2);
+
   navigator.clipboard
-    .writeText(updatedAssetJson)
+    .writeText(updatedJson)
     .then(() => alert("asset.json copied to clipboard!"))
     .catch((err) => console.error("Error copying to clipboard:", err));
 }
