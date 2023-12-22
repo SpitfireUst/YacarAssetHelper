@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yacar Asset/Entity Editor</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Asset Editor</h1>
+        <label for="assetId">Search by ID:</label>
+        <input type="text" id="assetId" placeholder="Enter Asset ID">
+        <button onclick="searchAsset()">Search</button>
+        <div id="assetForm"></div>
+        <button onclick="updateAsset()">Update Asset</button>
+        <button onclick="clearAssetForm()">Clear</button>
+        <button id="copyAssetJsonBtn" onclick="copyAssetJson()">Copy asset.json</button>
+    </div>
+
+    <div class="container">
+        <h1>Create New Entity Editor</h1>
+        <label for="entityName">Entity Name (required):</label>
+        <input type="text" id="entityName" placeholder="Enter Entity Name">
+        <label for="entityWebsite">Website:</label>
+        <input type="text" id="entityWebsite" placeholder="Enter Website URL">
+        <label for="entityTelegram">Telegram:</label>
+        <input type="text" id="entityTelegram" placeholder="Enter Telegram URL">
+        <label for="entityTwitter">Twitter:</label>
+        <input type="text" id="entityTwitter" placeholder="Enter Twitter URL">
+        <label for="entityDiscord">Discord:</label>
+        <input type="text" id="entityDiscord" placeholder="Enter Discord URL">
+        <label for="assetIds">Asset IDs (comma-separated):</label>
+        <input type="text" id="assetIds" placeholder="Enter Asset IDs">
+        <button onclick="updateEntityAndAssets()">Update Entity and Assets</button>
+        <button id="copyEntityJsonBtn" onclick="copyEntityJson()">Copy entity.json</button>
+    </div>
+    <button id="helpBtn" class="help-button" onclick="openHelp()">Help</button>
+    </div>
+
+    <div id="helpModal">
+        <div id="helpContent">
+            <h2>Help</h2>
+            <!-- Add your help instructions here -->
+            <p>To update an Asset:</p>
+            <ul>
+                <li>Search by Id in the Asset Editor</li>
+                <li>After updating the info click the `Update Asset` button</li>
+                <li>Then click the copy asset.json button</li>
+                <li>Navigate to https://github.com/coinhall/yacar</li>
+                <li>Create a new PR and replace the asset.json file from github with your copied file</li>
+            </ul>
+
+            <p>To create a new Entity (add social links to Asset):</p>
+            <ul>
+                <li>Fill in the data in the Create New Entity Editor</li>
+                <li>Put in the contract address(es) related to the newly created entity in the Asset IDs field</li>
+                <li>Press the `Update Entity and Assets` button</li>
+                <li>Then click the copy asset.json button</li>
+                <li>Navigate to https://github.com/coinhall/yacar</li>
+                <li>Create a new PR and replace the asset.json file from github with your copied file</li>
+                <li>Press the copy entity.json button</li>
+                <li>Replace the entity.json file from github with your copied file</li>
+            </ul>
+            <button id="closeHelpBtn" onclick="closeHelp()">Close</button>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+    <script>
+        function openHelp() {
+            document.getElementById("helpModal").style.display = "flex";
+        }
+
+        function closeHelp() {
+            document.getElementById("helpModal").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
